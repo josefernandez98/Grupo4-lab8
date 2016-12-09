@@ -13,7 +13,7 @@ class AsesinosOcultos : public Soldado {
         int getCantidadAsesinatos();
         void setCantidadAsesinatos(int);
         int getPasarDesapercibido();
-        void setPasarDesapercibido();
+        void setPasarDesapercibido(int);
         AsesinosOcultos();
         AsesinosOcultos(string, string, int, int, int);
 };

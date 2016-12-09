@@ -33,7 +33,7 @@ string EscuadronTerrestre::toString(){
   stringstream ss;
   ss << nombre << "\n";
   for (int i = 0; i < escuadron.size(); i++) {
-    ss <<  escuadron.at(i) << "\n";
+    ss <<  escuadron.at(i).toString() << "\n";
   }
   return ss.str();
 

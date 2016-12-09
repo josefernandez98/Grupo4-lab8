@@ -13,7 +13,7 @@ class CorazasDuras : public Soldado {
         int getDurezaArmadura();
         void setDurezaArmadura(int);
         int getCantidadLanzas();
-        void setCantidadLanzas();
+        void setCantidadLanzas(int);
         CorazasDuras();
         CorazasDuras(string, string, int, int, int);
 };

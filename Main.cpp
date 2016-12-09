@@ -7,10 +7,11 @@ void menu();
 int main(int argc, char const *argv[]) {
   initscr();
   raw();
-  int opcion=0;
+  int opcion = 0;
+  char opcionCH = opcion - '0';
   do {
     menu();
-    getch(opcion);
+    opcionCH = getch();
     if(opcion==1){
 
     }

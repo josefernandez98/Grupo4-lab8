@@ -13,7 +13,7 @@ class Arqueros : public Soldado {
         int getCantidadFlechas();
         void setCantidadFlechas(int);
         int getPresicionMili();
-        void setPresicionMili();
+        void setPresicionMili(int);
         Arqueros();
         Arqueros(string, string, int, int, int);
 };

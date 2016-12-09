@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Soldado.h"
+#include "Arqueros.h"
 #include <string>
 using namespace std;
 
