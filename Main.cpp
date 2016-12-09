@@ -11,15 +11,13 @@ int main(int argc, char const *argv[]) {
     do {
         menu();
         opcionCH = getch();
+        printw("\n");
         if(opcionCH =='1'){
 
         }//Fin opcion 1
         if(opcionCH == '2'){
 
         }//Fin opcion 2
-        if(opcionCH == '3'){
-
-        }//Fin opcion 3
     } while(opcionCH!='3');
 
 

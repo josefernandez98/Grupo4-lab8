@@ -16,4 +16,6 @@ class Arqueros : public Soldado {
         void setPresicionMili(int);
         Arqueros();
         Arqueros(string, string, int, int, int);
+        virtual double EficienciaAtaque();
+        virtual double EficienciaDefensa();
 };
