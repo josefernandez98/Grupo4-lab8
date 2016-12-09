@@ -1,15 +1,15 @@
 #pragma once
 #include <iostream>
-#include <string>
+#include <vector>
+#include "Soldado.h"
 using namespace std;
 
-class Soldado{
-  protected:
+class Escuadron Terrestre{
+  private:
     string nombre;
-    string ciudad;
-    int edad;
+    vector<Soldado> escuadron;
 
-  public:
+  private:
     Soldado();
     Soldado(string, string, int);
     void setNombre(string);
