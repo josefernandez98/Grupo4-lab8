@@ -20,9 +20,10 @@ int main(int argc, char const *argv[]) {
     initscr();
     raw();
     char opcionCH = '0';
-    vector<EscuadronTerrestre> escuadrones;
+    vector<EscuadronTerrestre*> escuadrones;
     Soldado* soldado;
     EscuadronTerrestre* escuadron;
+    int contadorSimulador = 0;
     do {
         menu();
         opcionCH = getch();
@@ -173,19 +174,18 @@ int main(int argc, char const *argv[]) {
                               asesinatos = conversionATOI(cantidadAsesinatosAsesinos);
                           }//Fin del for de jose
                       }//Fin de  la validacion
-                      printw("Ingrese la capacidad de pasar desapercibido:");
+                      printw("Ingrese la capacidad de pasar desapercibido (1 - 10):");
                       getstr(capacidadAsesinos);
                       capacidad = conversionATOI(capacidadAsesinos);
                       if ((capacidad <= 0) || (capacidad > 10)) {
                           for (;(capacidad <= 0) || (capacidad > 10);) {
                               printw("No ingreso un valor valido.");
                               printw("\n");
-                              printw("Ingrese la capacidad de pasar desapercibido:");
+                              printw("Ingrese la capacidad de pasar desapercibido (1- 10):");
                               getstr(capacidadAsesinos);
                               capacidad = conversionATOI(capacidadAsesinos);
                           }//Fin del for de jose
                       }//Fin de  la validacion
-
                       soldado = new AsesinosOcultos(nombre, ciudad, edad, asesinatos, capacidad);
                       escuadron -> setSoldado(soldado);
                       opcion2CH = '4';
@@ -194,13 +194,38 @@ int main(int argc, char const *argv[]) {
                 //Fin MENU 2
                 clear();
             }//Fin del for
+            escuadrones.push_back(escuadron);
+            contadorSimulador++;
         }//Fin opcion 1
         if(opcionCH == '2'){
             if (contadorSimulador >= 4) {
-
+                vector<EscuadronTerrestre> bando1;
+                vector<EscuadronTerrestre> bando2;
+                for (int i = 0; i < escuadrones.size(); i++) {
+                    printw("%d", i);
+                    addch(')');
+                    addch(' ');
+                    printw(escuadrones.at(i)->toString().c_str());
+                }//Fin del for
+                printw("\n");
+                printw("Bando 1, escoga un escuadron:");
+                char BandoEscoger[100];
+                int pos = 0;
+                getstr(BandoEscoger);
+                pos = conversionATOI(BandoEscoger);
+                if ((pos < 0) || (pos >= escuadrones.size())) {
+                    for (;(pos < 0) || (pos >= escuadrones.size());) {
+                        printw("\n");
+                        printw("No ingreso una posicion valida.");
+                        printw("\n");
+                        printw("Bando 1, escoga un escuadron:");
+                        getstr(BandoEscoger);
+                        pos = conversionATOI(BandoEscoger);
+                    }//for de jose
+                }//Validar posicion
             } else {
                 printw("\n");
-                printw("No hay suficientes escuadrones. Deben haber al menos 4. \n")
+                printw("No hay suficientes escuadrones. Deben haber al menos 4. \n");
             }//Fin de la validacion
         }//Fin opcion 2
     } while(opcionCH!='3');
