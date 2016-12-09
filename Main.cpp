@@ -193,14 +193,13 @@ int main(int argc, char const *argv[]) {
                   }//Fin del if 3
               } while (opcion2CH!='4');
                 //Fin MENU 2
-
                 clear();
             }//Fin del for
             contadorSimulador++;
         }//Fin opcion 1
         if(opcionCH == '2'){
             if (contadorSimulador >= 4) {
-                
+
             } else {
                 printw("\n");
                 printw("No hay suficientes escuadrones. Deben haber al menos 4. \n")
