@@ -8,7 +8,7 @@ class Soldado{
     string ciudad;
     int edad;
 
-  private:
+  public:
     Soldado();
     Soldado(string, string, int);
     void setNombre(string);
