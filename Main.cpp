@@ -68,23 +68,28 @@ int main(int argc, char const *argv[]) {
 
                 printw("Ingrese la edad del soldado:");
                 getstr(edadSoldado);
+                edad = conversionATOI(edadSoldado);
 
-                stringstream ss2;
-                string auxiliar = edadSoldado;
-                string help2 = "";
-                for (int i = 0 ; i < auxiliar.size(); i++) {
-                    ss2 << edadSoldado[i];
-                }//Fin del for
-                help2 = ss2.str();
-                edad = atoi(help2.c_str());
-
+                if (edad < 0) {
+                    for (;edad < 0;) {
+                        printw("No ingreso una edad valida.");
+                        printw("\n");
+                        printw("Ingrese la edad del soldado:");
+                        getstr(edadSoldado);
+                        edad = conversionATOI(edadSoldado);
+                    } // for de jose
+                }//Fin del if
+                printw("\n");
                 //MENU 2 Tipo de soldado
                 char opcion2CH='0';
                 do {
+                  printw("\n");
                   menu2();
                   opcion2CH = getch();
                   printw("\n");
                   if(opcion2CH=='1'){
+                      printw("\n");
+
                       int cantFlechas = 0, presicion = 0;
                       char cantidadFlechasArquero[100];
                       char presicionArquero[100];
@@ -95,15 +100,36 @@ int main(int argc, char const *argv[]) {
                       getstr(presicionArquero);
 
                       cantFlechas = conversionATOI(cantidadFlechasArquero);
+                      if (cantFlechas < 0) {
+                          for (;cantFlechas < 0;) {
+                              printw("No ingreso un valor valido.");
+                              printw("\n");
+                              printw("Ingrese la cantidad de flechas del arquero:");
+                              getstr(cantidadFlechasArquero);
+                              cantFlechas = conversionATOI(cantidadFlechasArquero);
+                          } // for de jose
+                      }//Fin del if
                       presicion = conversionATOI(presicionArquero);
-
+                      if (presicion < 0) {
+                          for (;presicion < 0;) {
+                              printw("No ingreso un valor valido.");
+                              printw("\n");
+                              printw("Ingrese la presicion del arquero en milimetros:");
+                              getstr(presicionArquero);
+                              presicion = conversionATOI(presicionArquero);
+                          } // for de jose
+                      }//Fin del if
                       soldado = new Arqueros(nombre, ciudad, edad, cantFlechas, presicion);
                       escuadron -> setSoldado(soldado);
+                      opcion2CH = '4';
                   }//Fin del if 1
                   if(opcion2CH=='2'){
+                      printw("\n");
+
                       int dureza = 0, cantLanzas = 0;
                       char cantidadLanzasCorazas[100];
                       char durezaCorazas[100];
+                      printw("\n");
 
                       printw("Ingrese la dureza de la armadura (1 - 10):");
                       getstr(durezaCorazas);
@@ -111,6 +137,7 @@ int main(int argc, char const *argv[]) {
                       if ((dureza <= 0) || (dureza > 10)) {
                           for (;(dureza <= 0) || (dureza > 10);) {
                               printw("No ingreso un valor valido.");
+                              printw("\n");
                               printw("Ingrese la dureza de la armadura (1 - 10):");
                               getstr(durezaCorazas);
                               dureza = conversionATOI(durezaCorazas);
@@ -124,9 +151,12 @@ int main(int argc, char const *argv[]) {
 
                       soldado = new CorazasDuras(nombre, ciudad, edad, dureza, cantLanzas);
                       escuadron -> setSoldado(soldado);
+                      opcion2CH = '4';
 
                   }//Fin del if 2
                   if(opcion2CH=='3'){
+                      printw("\n");
+
                       int asesinatos = 0, capacidad = 0;
                       char cantidadAsesinatosAsesinos[100];
                       char capacidadAsesinos[100];
@@ -137,6 +167,7 @@ int main(int argc, char const *argv[]) {
                       if (asesinatos < 0) {
                           for (;asesinatos < 0;) {
                               printw("No ingreso un valor valido.");
+                              printw("\n");
                               printw("Ingrese la cantidad de asesinatos:");
                               getstr(cantidadAsesinatosAsesinos);
                               asesinatos = conversionATOI(cantidadAsesinatosAsesinos);
@@ -148,6 +179,7 @@ int main(int argc, char const *argv[]) {
                       if ((capacidad <= 0) || (capacidad > 10)) {
                           for (;(capacidad <= 0) || (capacidad > 10);) {
                               printw("No ingreso un valor valido.");
+                              printw("\n");
                               printw("Ingrese la capacidad de pasar desapercibido:");
                               getstr(capacidadAsesinos);
                               capacidad = conversionATOI(capacidadAsesinos);
@@ -156,14 +188,12 @@ int main(int argc, char const *argv[]) {
 
                       soldado = new AsesinosOcultos(nombre, ciudad, edad, asesinatos, capacidad);
                       escuadron -> setSoldado(soldado);
-
+                      opcion2CH = '4';
                   }//Fin del if 3
-
-
               } while (opcion2CH!='4');
                 //Fin MENU 2
 
-
+                clear();
             }//Fin del for
         }//Fin opcion 1
         if(opcionCH == '2'){
@@ -188,8 +218,7 @@ void menu2(){
   printw("1) Arquero\n");
   printw("2) Corazas Duras\n");
   printw("3) Asesinos Ocultos\n");
-  printw("4) Salir\n");
-  printw("Ingrese el tipo de Soldado que desea: :");
+  printw("Ingrese el tipo de Soldado que desea:");
 }//Fin
 
 int conversionATOI(char arreglo[]) {
