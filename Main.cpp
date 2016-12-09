@@ -197,18 +197,20 @@ int main(int argc, char const *argv[]) {
             escuadrones.push_back(escuadron);
             contadorSimulador++;
         }//Fin opcion 1
+
         if(opcionCH == '2'){
-            if (contadorSimulador >= 4) {
-                vector<EscuadronTerrestre> bando1;
-                vector<EscuadronTerrestre> bando2;
+            if (contadorSimulador >= 0) {
+                vector<EscuadronTerrestre*> bando1;
+                vector<EscuadronTerrestre*> bando2;
                 for (int i = 0; i < escuadrones.size(); i++) {
                     printw("%d", i);
                     addch(')');
                     addch(' ');
                     printw(escuadrones.at(i)->toString().c_str());
                 }//Fin del for
+
                 printw("\n");
-                printw("Bando 1, escoga un escuadron:");
+                printw("Bando 1, escoga su frontal:");
                 char BandoEscoger[100];
                 int pos = 0;
                 getstr(BandoEscoger);
@@ -218,11 +220,100 @@ int main(int argc, char const *argv[]) {
                         printw("\n");
                         printw("No ingreso una posicion valida.");
                         printw("\n");
-                        printw("Bando 1, escoga un escuadron:");
+                        printw("Bando 1, escoga un frontal:");
                         getstr(BandoEscoger);
                         pos = conversionATOI(BandoEscoger);
                     }//for de jose
                 }//Validar posicion
+
+                bando1.push_back(escuadrones.at(pos));
+                escuadrones.erase(escuadrones.begin() + pos);
+
+                pos = 0;
+                for (int i = 0; i < escuadrones.size(); i++) {
+                    printw("%d", i);
+                    addch(')');
+                    addch(' ');
+                    printw(escuadrones.at(i)->toString().c_str());
+                }//Fin del for
+
+                printw("\n");
+                printw("Bando 1, escoga su retaguardia:");
+                char BandoEscoger2[100];
+                getstr(BandoEscoger2);
+                pos = conversionATOI(BandoEscoger2);
+                if ((pos < 0) || (pos >= escuadrones.size())) {
+                    for (;(pos < 0) || (pos >= escuadrones.size());) {
+                        printw("\n");
+                        printw("No ingreso una posicion valida.");
+                        printw("\n");
+                        printw("Bando 1, escoga su retaguardia:");
+                        getstr(BandoEscoger2);
+                        pos = conversionATOI(BandoEscoger2);
+                    }//for de jose
+                }//Validar posicion
+                bando1.push_back(escuadrones.at(pos));
+                escuadrones.erase(escuadrones.begin() + pos);
+
+
+                pos = 0;
+                for (int i = 0; i < escuadrones.size(); i++) {
+                    printw("%d", i);
+                    addch(')');
+                    addch(' ');
+                    printw(escuadrones.at(i)->toString().c_str());
+                }//Fin del for
+
+                printw("\n");
+                printw("Bando 2, escoga su frontal:");
+                char BandoEscoger3[100];
+                getstr(BandoEscoger3);
+                pos = conversionATOI(BandoEscoger3);
+                if ((pos < 0) || (pos >= escuadrones.size())) {
+                    for (;(pos < 0) || (pos >= escuadrones.size());) {
+                        printw("\n");
+                        printw("No ingreso una posicion valida.");
+                        printw("\n");
+                        printw("Bando 2, escoga su frontal:");
+                        getstr(BandoEscoger3);
+                        pos = conversionATOI(BandoEscoger3);
+                    }//for de jose
+                }//Validar posicion
+
+                bando2.push_back(escuadrones.at(pos));
+                escuadrones.erase(escuadrones.begin() + pos);
+
+                pos = 0;
+                for (int i = 0; i < escuadrones.size(); i++) {
+                    printw("%d", i);
+                    addch(')');
+                    addch(' ');
+                    printw(escuadrones.at(i)->toString().c_str());
+                }//Fin del for
+
+                printw("\n");
+                printw("Bando 2, escoga su retaguardia:");
+                char BandoEscoger4[100];
+                getstr(BandoEscoger4);
+                pos = conversionATOI(BandoEscoger4);
+                if ((pos < 0) || (pos >= escuadrones.size())) {
+                    for (;(pos < 0) || (pos >= escuadrones.size());) {
+                        printw("\n");
+                        printw("No ingreso una posicion valida.");
+                        printw("\n");
+                        printw("Bando 2, escoga su retaguardia:");
+                        getstr(BandoEscoger4);
+                        pos = conversionATOI(BandoEscoger4);
+                    }//for de jose
+                }//Validar posicion
+                bando2.push_back(escuadrones.at(pos));
+                escuadrones.erase(escuadrones.begin() + pos);
+
+
+
+
+
+
             } else {
                 printw("\n");
                 printw("No hay suficientes escuadrones. Deben haber al menos 4. \n");
