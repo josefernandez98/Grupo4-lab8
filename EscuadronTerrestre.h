@@ -8,15 +8,15 @@ using namespace std;
 class EscuadronTerrestre{
   private:
     string nombre;
-    vector<Soldado> escuadron;
+    vector<Soldado*> escuadron;
 
   public:
     EscuadronTerrestre();
     EscuadronTerrestre(string);
     void setNombre(string);
     string getNombre();
-    void setSoldado(Soldado);
-    Soldado getSoldado(int);
+    void setSoldado(Soldado*);
+    Soldado* getSoldado(int);
     string toString();
     ~EscuadronTerrestre();
 };

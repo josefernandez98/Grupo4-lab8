@@ -20,10 +20,10 @@ void EscuadronTerrestre::setNombre(string nombre){
 string EscuadronTerrestre::getNombre(){
   return nombre;
 }
-void EscuadronTerrestre::setSoldado(Soldado s){
+void EscuadronTerrestre::setSoldado(Soldado* s){
   escuadron.push_back(s);
 }
-Soldado EscuadronTerrestre::getSoldado(int i){
+Soldado* EscuadronTerrestre::getSoldado(int i){
   if(i>0 && i< escuadron.size()){
     return escuadron.at(i);
   }
@@ -33,7 +33,7 @@ string EscuadronTerrestre::toString(){
   stringstream ss;
   ss << nombre << "\n";
   for (int i = 0; i < escuadron.size(); i++) {
-    ss <<  escuadron.at(i).toString() << "\n";
+    ss <<  escuadron.at(i)->toString() << "\n";
   }
   return ss.str();
 
