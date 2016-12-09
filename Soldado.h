@@ -19,7 +19,7 @@ class Soldado{
     string getCiudad();
     int getEdad();
     string toString();
-    virtual double EficienciaAtque();
+    virtual double EficienciaAtaque();
     virtual double EficienciaDefensa();
     ~Soldado();
 };
