@@ -7,6 +7,7 @@
 using namespace std;
 
 void menu();
+void menu2();
 
 int main(int argc, char const *argv[]) {
     initscr();
@@ -60,7 +61,29 @@ int main(int argc, char const *argv[]) {
                 }//Fin del for
                 help2 = ss2.str();
                 edad = atoi(help2.c_str());
+
+                //MENU 2 Tipo de soldado
+                char opcion2CH='0';
+                do {
+                  menu2();
+                  opcion2CH = getch();
+                  printw("\n");
+                  if(opcion2CH=='1'){
+
+
+                  }
+                  if(opcion2CH=='2'){
+
+                  }
+                  if(opcion2CH=='3'){
+
+                  }
+
+
+                } while(while opcion2CH!='4');
+                //Fin MENU 2
                 
+
             }//Fin del for
         }//Fin opcion 1
         if(opcionCH == '2'){
@@ -80,3 +103,12 @@ void menu(){
   printw("3) Salir\n");
   printw("Ingrese su opcion:");
 }//Fin del menu
+
+void menu2(){
+  printw("1) Arquero\n");
+  printw("2) Corazas Duras\n");
+  printw("3) Asesinos Ocultos\n");
+  printw("4) Salir\n");
+  printw("Ingrese el tipo de Soldado que desea: :");
+
+}
