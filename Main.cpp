@@ -2,6 +2,7 @@
 #include <ncurses.h>
 using namespace std;
 
+void menu();
 
 int main(int argc, char const *argv[]) {
   initscr();
@@ -16,4 +17,13 @@ int main(int argc, char const *argv[]) {
   endwin();
 
   return 0;
+}
+
+void menu(){
+  printw("Bienvenido al simulador de Guerra Punica");
+  printw("1) Crear Escuadron");
+
+
+
+
 }
