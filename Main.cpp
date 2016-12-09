@@ -197,6 +197,7 @@ int main(int argc, char const *argv[]) {
         }//Fin opcion 1
         if(opcionCH == '2'){
             if (contadorSimulador >= 4) {
+              
 
             } else {
                 printw("\n");
