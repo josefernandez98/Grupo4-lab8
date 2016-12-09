@@ -33,9 +33,9 @@ int main(int argc, char const *argv[]) {
 }
 
 void menu(){
-  printw("Bienvenido al simulador de Guerra Punica");
-  printw("1) Crear Escuadron");
-  printw("2) Simulacion");
-  printw("3) Salir");
+  printw("Bienvenido al simulador de Guerra Punica\n");
+  printw("1) Crear Escuadron\n");
+  printw("2) Simulacion\n");
+  printw("3) Salir\n");
   printw("Ingrese su opcion:");
 }//Fin del menu
