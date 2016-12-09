@@ -35,6 +35,12 @@ int Soldado::getEdad(){
   return edad;
 
 }
+double Soldado::EficienciaAtaque(){
+  return 0;
+}
+double Soldado::EficienciaDefensa(){
+  return 0;
+}
 string Soldado::toString(){
   stringstream ss;
   ss << nombre << "\n";
