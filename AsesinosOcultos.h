@@ -7,13 +7,13 @@ using namespace std;
 
 class AsesinosOcultos : public Soldado {
     private:
-        int cantidadFlechas;
-        int presicionMili;
+        int cantidadAsesinatos;
+        int pasarDesapercibido;
     public:
-        int getCantidadFlechas();
-        void setCantidadFlechas(int);
-        int getPresicionMili();
-        void setPresicionMili();
-        Arqueros();
-        Arqueros(string, string, int, int, int);
+        int getCantidadAsesinatos();
+        void setCantidadAsesinatos(int);
+        int getPasarDesapercibido();
+        void setPasarDesapercibido();
+        AsesinosOcultos();
+        AsesinosOcultos(string, string, int, int, int);
 };
