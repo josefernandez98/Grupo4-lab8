@@ -28,3 +28,13 @@ int AsesinosOcultos::getPasarDesapercibido() {
 void AsesinosOcultos::setPasarDesapercibido(int pasarDesapercibido) {
     this->pasarDesapercibido = pasarDesapercibido;
 }//Fin del metodo
+
+double AsesinosOcultos::EficienciaAtaque() {
+    double eficiencia = cantidadAsesinatos;
+    return eficiencia;
+}//Fin del metodo
+
+double AsesinosOcultos::EficienciaDefensa() {
+    double eficiencia = pasarDesapercibido * 10;
+    return eficiencia;
+}//Fin del metodo

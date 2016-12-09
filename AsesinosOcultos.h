@@ -16,4 +16,6 @@ class AsesinosOcultos : public Soldado {
         void setPasarDesapercibido(int);
         AsesinosOcultos();
         AsesinosOcultos(string, string, int, int, int);
+        virtual double EficienciaAtaque();
+        virtual double EficienciaDefensa();
 };

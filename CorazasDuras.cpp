@@ -30,3 +30,14 @@ int CorazasDuras::getDurezaArmadura() {
 void CorazasDuras::setDurezaArmadura(int durezaArmadura) {
     this->durezaArmadura = durezaArmadura;
 }//Fin del metodo
+
+
+double CorazasDuras::EficienciaAtaque() {
+    double eficiencia = cantidadLanzas;
+    return eficiencia;
+}//Fin del metodo
+
+double CorazasDuras::EficienciaDefensa() {
+    double eficiencia = durezaArmadura;
+    return eficiencia;
+}//Fin del metodo

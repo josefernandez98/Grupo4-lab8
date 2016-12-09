@@ -16,4 +16,6 @@ class CorazasDuras : public Soldado {
         void setCantidadLanzas(int);
         CorazasDuras();
         CorazasDuras(string, string, int, int, int);
+        virtual double EficienciaAtaque();
+        virtual double EficienciaDefensa();
 };

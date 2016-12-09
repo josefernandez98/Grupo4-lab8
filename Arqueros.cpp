@@ -28,3 +28,12 @@ int Arqueros::getPresicionMili() {
 void Arqueros::setPresicionMili(int presicionMili) {
     this->presicionMili = presicionMili;
 }//Fin del metodo
+
+double Arqueros::EficienciaAtaque() {
+    double eficiencia = cantidadFlechas * (presicionMili / 1000);
+    return eficiencia;
+}//Fin del metodo
+
+double Arqueros::EficienciaDefensa() {
+    return 0;
+}//Fin del metodo
