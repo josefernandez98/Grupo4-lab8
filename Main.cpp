@@ -7,8 +7,7 @@ void menu();
 int main(int argc, char const *argv[]) {
     initscr();
     raw();
-    int opcion = 0;
-    char opcionCH = opcion - '0';
+    char opcionCH = '0';
     do {
         menu();
         opcionCH = getch();
@@ -21,7 +20,7 @@ int main(int argc, char const *argv[]) {
         if(opcionCH == '3'){
 
         }//Fin opcion 3
-    } while(opcionCH!=3);
+    } while(opcionCH!='3');
 
 
 
