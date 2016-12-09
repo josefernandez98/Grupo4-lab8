@@ -1,22 +1,27 @@
-#include <iostream>
 #include "Soldado.h"
+#include <iostream>
+#include <string>
+#include <sstream>
+
 using namespace std;
 
 Soldado::Soldado(){
 
 }
 Soldado::Soldado(string nombre, string ciudad, int edad){
-
+  this -> nombre = nombre;
+  this -> ciudad = ciudad;
+  this -> edad=edad;
 
 }
 void Soldado::setNombre(string nombre){
-
+  this -> nombre = nombre;
 }
 void Soldado::setCiudad(string ciudad){
-
+  this -> ciudad = ciudad;
 }
 void Soldado::setEdad(int edad){
-
+  this -> edad = edad;
 }
 string Soldado::getNombre(){
   return nombre;
@@ -31,7 +36,11 @@ int Soldado::getEdad(){
 
 }
 string Soldado::toString(){
-
+  stringstream ss;
+  ss << nombre << "\n";
+  ss << ciudad << "\n";
+  ss  << edad << "\n";
+  return ss.str();
 }
 Soldado::~Soldado(){
 
