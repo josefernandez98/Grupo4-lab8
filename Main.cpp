@@ -22,7 +22,6 @@ int main(int argc, char const *argv[]) {
     char opcionCH = '0';
     vector<EscuadronTerrestre> escuadrones;
     Soldado* soldado;
-    int contadorSimulador = 0;
     EscuadronTerrestre* escuadron;
     do {
         menu();
@@ -195,7 +194,6 @@ int main(int argc, char const *argv[]) {
                 //Fin MENU 2
                 clear();
             }//Fin del for
-            contadorSimulador++;
         }//Fin opcion 1
         if(opcionCH == '2'){
             if (contadorSimulador >= 4) {
