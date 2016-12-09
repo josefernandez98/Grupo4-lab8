@@ -22,7 +22,6 @@ int main(int argc, char const *argv[]) {
     char opcionCH = '0';
     vector<EscuadronTerrestre> escuadrones;
     Soldado* soldado;
-    int contadorSimulador = 0;
     EscuadronTerrestre* escuadron;
     do {
         menu();
@@ -196,15 +195,10 @@ int main(int argc, char const *argv[]) {
 
                 clear();
             }//Fin del for
-            contadorSimulador++;
         }//Fin opcion 1
         if(opcionCH == '2'){
-            if (contadorSimulador >= 4) {
-                
-            } else {
-                printw("\n");
-                printw("No hay suficientes escuadrones. Deben haber al menos 4. \n")
-            }//Fin de la validacion
+          
+
         }//Fin opcion 2
     } while(opcionCH!='3');
     printw("Presione enter para salir.");
