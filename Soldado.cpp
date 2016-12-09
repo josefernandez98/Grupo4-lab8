@@ -29,5 +29,5 @@ string Soldado::toString(){
 
 }
 Soldado::~Soldado(){
-  
+
 }
