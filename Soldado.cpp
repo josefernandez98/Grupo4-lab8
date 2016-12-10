@@ -36,10 +36,10 @@ int Soldado::getEdad(){
 
 }
 double Soldado::EficienciaAtaque(){
-  return 0;
+  return 1;
 }
 double Soldado::EficienciaDefensa(){
-  return 0;
+  return 1;
 }
 string Soldado::toString(){
   stringstream ss;

@@ -35,6 +35,22 @@ string EscuadronTerrestre::toString(){
   return ss.str();
 
 }
+double EscuadronTerrestre::getEficienciaAtaque(){
+  double eficiencia;
+  for (int i = 0; i < escuadron.size(); i++) {
+      eficiencia=eficiencia + escuadron.at(i)->EficienciaAtaque();
+  }
+  return eficiencia;
+
+}
+double EscuadronTerrestre::getEficienciaDefensa(){
+  double eficiencia;
+  for (int i = 0; i < escuadron.size(); i++) {
+      eficiencia=eficiencia + escuadron.at(i)->EficienciaDefensa();
+  }
+  return eficiencia;
+
+}
 EscuadronTerrestre::~EscuadronTerrestre(){
 
 }

@@ -18,5 +18,7 @@ class EscuadronTerrestre{
     void setSoldado(Soldado*);
     Soldado* getSoldado(int);
     string toString();
+    double getEficienciaAtaque();
+    double getEficienciaDefensa();
     ~EscuadronTerrestre();
 };

@@ -311,8 +311,19 @@ int main(int argc, char const *argv[]) {
 
 
                 // comienza la simulacion:
+                double EficienciaAtaqueBando1 = bando1.at(0)->getEficienciaAtaque();
+                double EficienciaAtaqueBando2 = bando1.at(0)->getEficienciaAtaque();
+                double EficienciaDefensaBando1 = bando1.at(1)->getEficienciaDefensa();
+                double EficienciaDefensaBando2 = bando1.at(1)->getEficienciaDefensa();
 
-                
+
+                printw("Bando 1, el total de ataque de su escuadron frontal es: ");
+                printw("%f",EficienciaAtaqueBando1);
+                printw("\n");
+
+
+
+
 
 
             } else {
